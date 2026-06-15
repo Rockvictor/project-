@@ -1,0 +1,66 @@
+{
+  "name": "Update",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Headline / title of the update"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "News",
+        "Product",
+        "Community",
+        "Impact",
+        "Event"
+      ],
+      "default": "News",
+      "description": "Category tag"
+    },
+    "excerpt": {
+      "type": "string",
+      "description": "Short summary (2-3 sentences) shown in the card"
+    },
+    "body": {
+      "type": "string",
+      "description": "Full article body (plain text or markdown)"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL of the update card image"
+    },
+    "published_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Publication date shown on card"
+    },
+    "is_published": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to show on public site"
+    }
+  },
+  "required": [
+    "title",
+    "excerpt"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

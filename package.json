@@ -1,0 +1,13 @@
+{
+  "name": "ecoshemill-static",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve .",
+    "clean": "echo Clean not implemented"
+  },
+  "description": "Static HTML/CSS version of the Ecoshemill site",
+  "dependencies": {},
+  "devDependencies": {}
+}

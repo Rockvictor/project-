@@ -1,0 +1,60 @@
+{
+  "name": "ServiceItem",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Service title, e.g. Maize Shelling"
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Subtitle / machine name, e.g. 7.5 HP Maize Sheller"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description paragraph"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Bullet-point feature list"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL of the service image"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order (ascending)"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to show on public site"
+    }
+  },
+  "required": [
+    "title",
+    "description"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
